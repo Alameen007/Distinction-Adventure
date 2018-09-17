@@ -1,0 +1,13 @@
+{
+  "presets": ["react", "stage-0", [
+    "es2015",
+    {
+      "modules": false
+    }
+  ]],
+  "plugins": [
+    ["transform-object-assign", "transform-runtime", "transform-class-properties", {
+      "spec": true
+    }]
+  ]
+}

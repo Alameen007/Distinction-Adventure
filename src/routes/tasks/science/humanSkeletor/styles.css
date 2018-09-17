@@ -1,0 +1,380 @@
+.dot1 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 558px;
+  top: 155px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot2 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 597px;
+  top: 192px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot3 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 555px;
+  top: 213px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot4 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 601px;
+  top: 244px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot5 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 601px;
+  top: 276px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot6 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 608px;
+  top: 315px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot7 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 628px;
+  top: 344px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot8 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 623px;
+  top: 383px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot9 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 623px;
+  top: 418px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot10 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 598px;
+  top: 454px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot11 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 570px;
+  top: 487px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot12 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 570px;
+  top: 515px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot13 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 542px;
+  top: 541px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot14 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 542px;
+  top: 572px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot15 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 357px;
+  top: 208px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot16 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 330px;
+  top: 237px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot17 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 318px;
+  top: 278px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot18 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 319px;
+  top: 310px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot19 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 319px;
+  top: 344px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.dot20 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 338px;
+  top: 379px;
+  width: 14px;
+  height: 14px;
+  background-color: #7A57D1;
+  border: 1px solid #4316B0;
+  border-radius: 7px;
+  cursor: default;
+  outline: none;
+}
+
+.sampleTaskNavbar {
+  background: #FFF;
+}
+
+.sampleTask-Navbar .navbar-section a {
+  color: #d0d0d0;
+}
+
+.sampleTaskNavbar .navbar-section a.bck-link {
+  background: #d1d1d1;
+  color: #777;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 20px;
+}
+
+.sampleTaskNavbar .navbar-section a.bck-link:hover {
+  text-decoration: none;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.--task-title {
+  padding: 40px 20px;
+}
+
+.drag-sec {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.chip {
+  padding: 5px 10px;
+  background: #7A57D1;
+  color: #FFF;
+  font-size: 12px;
+  margin-bottom: -20px;
+}
+
+.skl {
+  /* border: black solid 1px; */
+  width: 755px;
+  height: 478px;
+}
+
+.skl img {
+  width: 100%;
+}
+
+.hiddenGuy {
+  color: white;
+}
+
+.h5 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+}
+
+.pdot {
+  color: #7A57D1
+}
+
+.label {
+  padding: 5px 10px;
+  background: #7A57D1;
+  color: #FFF;
+  font-size: 12px;
+  margin-bottom: -20px;
+  align-items: center;
+  border-radius: 5rem;
+  display: inline-flex;
+  height: 1.2rem;
+  line-height: .8rem;
+  margin: .1rem;
+  text-decoration: none;
+  vertical-align: middle;
+}
