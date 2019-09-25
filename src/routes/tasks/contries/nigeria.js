@@ -7,12 +7,12 @@ const Nigeria = () => {
   return (
     <div>
       <svg
-        xmlnsMapsvg="http://mapsvg.com"
-        xmlnsDc="http://purl.org/dc/elements/1.1/"
-        xmlnsRdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlnsSvg="http://www.w3.org/2000/svg"
+        xmlnsmapsvg="http://mapsvg.com"
+        xmlnsdc="http://purl.org/dc/elements/1.1/"
+        xmlnsrdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlnssvg="http://www.w3.org/2000/svg"
         xmlns="http://www.w3.org/2000/svg"
-        mapsvgGeoViewBox="2.667421 13.892750 14.680752 4.269658"
+        mapsvggeoviewbox="2.667421 13.892750 14.680752 4.269658"
         width="744.24182"
         height="599.92847"
         fill="#258751"

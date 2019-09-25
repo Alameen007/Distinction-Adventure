@@ -1,9 +1,8 @@
-.dot1 {
+
+.dot {
   display: flex;
   justify-content: center;
   position: absolute;
-  left: 558px;
-  top: 155px;
   width: 14px;
   height: 14px;
   background-color: #7A57D1;
@@ -11,291 +10,106 @@
   border-radius: 7px;
   cursor: default;
   outline: none;
+}
+
+.dot1 {
+  left: 422px;
+  top: 34px;
 }
 
 .dot2 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 597px;
-  top: 192px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 463px;
+  top: 71px;
 }
 
 .dot3 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 555px;
-  top: 213px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 421px;
+  top: 93px;
 }
 
 .dot4 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 601px;
-  top: 244px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 465px;
+  top: 124px;
 }
 
 .dot5 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 601px;
-  top: 276px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 465px;
+  top: 156px;
 }
 
 .dot6 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 608px;
-  top: 315px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 472px;
+  top: 195px;
 }
 
 .dot7 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 628px;
-  top: 344px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 491px;
+  top: 224px;
 }
 
 .dot8 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 623px;
-  top: 383px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 488px;
+  top: 262px;
 }
 
 .dot9 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 623px;
-  top: 418px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 487px;
+  top: 299px;
 }
 
 .dot10 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 598px;
-  top: 454px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 463px;
+  top: 333px;
 }
 
 .dot11 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 570px;
-  top: 487px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 432px;
+  top: 367px;
 }
 
 .dot12 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 570px;
-  top: 515px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 433px;
+  top: 395px;
 }
 
 .dot13 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 542px;
-  top: 541px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 407px;
+  top: 422px;
 }
 
 .dot14 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 542px;
-  top: 572px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 405px;
+  top: 452px;
 }
 
 .dot15 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 357px;
-  top: 208px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 220px;
+  top: 88px;
 }
 
 .dot16 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 330px;
-  top: 237px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 194px;
+  top: 118px;
 }
 
 .dot17 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 318px;
-  top: 278px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 182px;
+  top: 158px;
 }
 
 .dot18 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 319px;
-  top: 310px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 182px;
+  top: 190px;
 }
 
 .dot19 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 319px;
-  top: 344px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 183px;
+  top: 224px;
 }
 
 .dot20 {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 338px;
-  top: 379px;
-  width: 14px;
-  height: 14px;
-  background-color: #7A57D1;
-  border: 1px solid #4316B0;
-  border-radius: 7px;
-  cursor: default;
-  outline: none;
+  left: 204px;
+  top: 259px;
 }
 
 .sampleTaskNavbar {
@@ -342,6 +156,7 @@
 
 .skl {
   /* border: black solid 1px; */
+  position: relative;
   width: 755px;
   height: 478px;
 }
@@ -378,3 +193,18 @@
   text-decoration: none;
   vertical-align: middle;
 }
+
+.congrat {
+  width: 27%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+  position: absolute;
+  top: 25%;
+  left: 643px;
+}
+
+/* .congrat h3 {
+  text-align: center;
+} */

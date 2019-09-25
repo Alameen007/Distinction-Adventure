@@ -8,6 +8,7 @@
   "plugins": [
     ["transform-object-assign", "transform-runtime", "transform-class-properties", {
       "spec": true
-    }]
+    }],
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
   ]
 }

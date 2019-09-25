@@ -9,10 +9,14 @@ export default {
     tasks: [],
     user: {},
     tags: [],
+    point: 0,
     currentTask: {},
     modalVisible: true,
+    markLoader: false,
+    congratModalVisible: false,
     profileVisible: false,
     settingVisible: false,
+    completeTags: [],
   },
 
   reducers: {
@@ -36,7 +40,6 @@ export default {
 
   effects: {
     * query ({ payload = {} }, { call, put }) {
-      console.log('user')
       const data = yield call(getUser, payload)
       if (data.success) {
         yield put({
@@ -74,10 +77,14 @@ export default {
             },
           })
         } else {
+          const completeTags = response.raw.data.data.map(tag => {
+            return { ...tag }
+          })
           yield put({
             type: 'save',
             payload: {
               tags: response.raw.data.data,
+              completeTags,
             },
           })
         }
@@ -119,6 +126,9 @@ export default {
     },
     * logout ({ payload = {} }, { call, put }) {
       console.log('logout')
+      yield put({
+        type: 'save',
+      })
       // const data = yield call(getCategories, payload)
       localStorage.setItem('user', JSON.stringify({}))
       localStorage.setItem('currentTask', JSON.stringify({}))

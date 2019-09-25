@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'dva'
-import { BackTop, Drawer, List, Avatar, Divider, Col, Row, Modal } from 'antd'
+import Particles from 'react-particles-js'
+import { List, Avatar, Modal } from 'antd'
 import { Link } from 'dva/router'
 import Profile from './../../components/profile'
 import TaskBag from '../../assets/images/task-bg.png'
@@ -61,11 +62,26 @@ function Tasks (props) {
     },
   }
 
+  const particlesOptions = {
+    particles: {
+      number: {
+        value: 250,
+        density: {
+          enable: true,
+          value_area: 800,
+        },
+      },
+      move: {
+        speed: 30,
+      },
+    },
+  }
+
 
   return (
-    <div>
+    <div className="taskMain">
       <Profile {...profileProps} />
-      <header className="navbar">
+      <header className="navbar" style={{ background: 'none' }}>
         <section className="navbar-section">
           <a href="index.html" className="btn btn-link">
             dis.adventure
@@ -93,7 +109,9 @@ function Tasks (props) {
         </section>
       </header>
 
-      <div className="block -berry edge--bottom">
+      <Particles className="particles -berry edge--bottom" params={particlesOptions} />
+      <div className="block">
+
         <h1>Welcome To Distinction Adventure</h1>
       </div>
       <div className="task-bg">

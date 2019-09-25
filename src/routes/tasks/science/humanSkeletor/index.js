@@ -5,6 +5,7 @@ import { Link } from 'dva/router'
 import { Button, Modal } from 'antd'
 import styles from './styles.css'
 import { tags } from './tags'
+import CongratPage from './congratPage'
 import skeletor from './../../../../assets/images/Skeletal-System.png'
 
 const currentTask = localStorage.getItem('currentTask')
@@ -17,9 +18,33 @@ class SkeletalSystem extends React.Component {
     this.state = {
       tasks: this.props.tasks.tags,
       right: {
+        display: 'inline-block',
+        whiteSpace: 'nowrap',
+        padding: '5px 10px',
+        background: '#b6e98f',
+        color: 'rgba(0, 0, 0, 0.65)',
+        fontSize: '12px',
+        marginBottom: '-20px',
+        position: 'absolute',
+        marginTop: '-6px',
+      },
+      drop: {
+        display: 'inline-block',
+        whiteSpace: 'nowrap',
         padding: '5px 10px',
         background: '#7A57D1',
-        color: '#FFF',
+        color: 'FFF',
+        fontSize: '12px',
+        marginBottom: '-20px',
+        position: 'absolute',
+        marginTop: '-6px',
+      },
+      wrong: {
+        display: 'inline-block',
+        whiteSpace: 'nowrap',
+        padding: '5px 10px',
+        background: '#ffa39e',
+        color: 'rgba(0, 0, 0, 0.65)',
         fontSize: '12px',
         marginBottom: '-20px',
         position: 'absolute',
@@ -42,7 +67,6 @@ class SkeletalSystem extends React.Component {
   }
 
   componentDidMount () {
-    // window.location.reload()
     const status = this.props.tasks.currentTask.status || currtask.status
     if (this.state.tasks.length < 1 || this.state.tasks === undefined) {
       this.setState({ tasks: tags })
@@ -70,6 +94,7 @@ onDragOver = (ev) => {
   ev.preventDefault()
 }
 
+
 onDrop = (ev, cat) => {
   const taskId = this.props.tasks.currentTask._id || currtask._id
   let id = ev.dataTransfer.getData('id')
@@ -77,12 +102,16 @@ onDrop = (ev, cat) => {
   let tasks = this.state.tasks.filter((task) => {
     if (task.name === id) {
       task.category = cat
-      task.style = this.state.right
+      task.style = this.state.drop
     }
     return task
   })
 
-  this.props.dispatch({ type: 'tasks/save', payload: { tags: tasks } })
+  const completeTags = this.state.tasks.map(tag => {
+    return { ...tag }
+  })
+
+  this.props.dispatch({ type: 'tasks/save', payload: { tags: tasks, completeTags } })
   this.props.dispatch({ type: 'tasks/updateTaskData', tags: tasks, taskId })
 }
 
@@ -99,8 +128,38 @@ onComplete = (ev, cat) => {
     return task
   })
 
-  dispatch({ type: 'tasks/save', payload: { tags: tasks } })
+  const completeTags = this.state.tasks.map(tag => {
+    return { ...tag }
+  })
+
+  dispatch({ type: 'tasks/save', payload: { tags: tasks, completeTags } })
   this.props.dispatch({ type: 'tasks/updateTaskData', tags: tasks, taskId })
+}
+
+handleSubmit = () => {
+  let { completeTags } = this.props.tasks
+  let point = 0
+
+  for (let i = 0; i < completeTags.length; i++) {
+    if (completeTags[i].tag === completeTags[i].category) {
+      completeTags[i].style = this.state.right
+      point++
+    } else {
+      completeTags[i].style = this.state.wrong
+    }
+  }
+
+
+  this.props.dispatch({
+    type: 'tasks/save',
+    payload: {
+      completeTags,
+      markLoader: true,
+      point,
+    },
+  })
+
+  setTimeout(() => { this.props.dispatch({ type: 'tasks/save', payload: { congratModalVisible: true, markLoader: false } }) }, 1500)
 }
 
 updateTaskStatus = () => {
@@ -109,7 +168,9 @@ updateTaskStatus = () => {
 }
 
 render () {
-  const { modalVisible } = this.props.tasks
+  const {
+    modalVisible, congratModalVisible, completeTags, point, markLoader,
+  } = this.props.tasks
   const visible = true
   let tasks = {
     Sternum: [],
@@ -120,12 +181,12 @@ render () {
     Ulna: [],
     Radius: [],
     Carpals: [],
-    PhalangesH: [],
+    PhalangesHand: [],
     Femur: [],
     Tibia: [],
     Fibula: [],
     Tarsals: [],
-    PhalangesF: [],
+    PhalangesFoot: [],
     SacrumCoccyx: [],
     PelvicGirdle: [],
     LumbarVertebrae: [],
@@ -161,131 +222,291 @@ render () {
       </header>
       <div />
 
-      <div className={styles.dot1}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Cranium') }}
-      >
-        {tasks.Cranium}
-      </div>
-      <div className={styles.dot2}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Sternum') }}
-      >
-        {tasks.Sternum}
-      </div>
-      <div className={styles.dot3}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Clavicle') }}
-      >
-        {tasks.Clavicle}
-      </div>
-      <div className={styles.dot4}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Ribs') }}
-      >
-        {tasks.Ribs}
-      </div>
-      <div className={styles.dot5}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Humerus') }}
-      >
-        {tasks.Humerus}
-      </div>
-      <div className={styles.dot6}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Ulna') }}
-      >
-        {tasks.Ulna}
-      </div>
-      <div className={styles.dot7}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Radius') }}
-      >
-        {tasks.Radius}
-      </div>
-      <div className={styles.dot8}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Carpals') }}
-      >
-        {tasks.Carpals}
-      </div>
-      <div className={styles.dot9}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'PhalangesH') }}
-      >
-        {tasks.PhalangesH}
-      </div>
-      <div className={styles.dot10}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Femur') }}
-      >
-        {tasks.Femur}
-      </div>
-      <div className={styles.dot11}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Tibia') }}
-      >
-        {tasks.Tibia}
-      </div>
-      <div className={styles.dot12}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Fibula') }}
-      >
-        {tasks.Fibula}
-      </div>
-      <div className={styles.dot13}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Tarsals') }}
-      >
-        {tasks.Tarsals}
-      </div>
-      <div className={styles.dot14}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'PhalangesF') }}
-      >
-        {tasks.PhalangesF}
-      </div>
-      <div className={styles.dot15}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Cervical') }}
-      >
-        {tasks.Cervical}
-      </div>
-      <div className={styles.dot16}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'Scapula') }}
-      >
-        {tasks.Scapula}
-      </div>
-      <div className={styles.dot17}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'LumbarVertebrae') }}
-      >
-        {tasks.LumbarVertebrae}
-      </div>
-      <div className={styles.dot18}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'ThoracicVertebrae') }}
-      >
-        {tasks.ThoracicVertebrae}
-      </div>
-      <div className={styles.dot19}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'PelvicGirdle') }}
-      >
-        {tasks.PelvicGirdle}
-      </div>
-      <div className={styles.dot20}
-        onDragOver={(e) => this.onDragOver(e)}
-        onDrop={(e) => { this.onDrop(e, 'SacrumCoccyx') }}
-      >
-        {tasks.SacrumCoccyx}
-      </div>
+
       <div className="container">
         <div className="columns">
           <div className="column col-9 ">
             <div className={styles.skl}>
-              <img src={skeletor} className="skl-img" alt="" />
+              <img src={skeletor} className="skl-img img" alt="" />
+              <div className={
+                `${styles.dot1} ${styles.dot}`
+              }
+                onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Cranium')
+                  }
+                }
+              >
+                {
+                  tasks.Cranium
+                } </div> <div className={`${styles.dot2} ${styles.dot}`}
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Sternum')
+                  }
+                }
+                >
+                  {
+                  tasks.Sternum
+                } </div> <div className={
+                `${styles.dot3} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Clavicle')
+                  }
+                }
+                >
+                  {
+                  tasks.Clavicle
+                } </div> <div className={
+                `${styles.dot4} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Ribs')
+                  }
+                }
+                >
+                  {
+                  tasks.Ribs
+                } </div> <div className={
+                `${styles.dot5} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Humerus')
+                  }
+                }
+                >
+                  {
+                  tasks.Humerus
+                } </div> <div className={
+                `${styles.dot6} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Ulna')
+                  }
+                }
+                >
+                  {
+                  tasks.Ulna
+                } </div> <div className={
+                `${styles.dot7} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Radius')
+                  }
+                }
+                >
+                  {
+                  tasks.Radius
+                } </div> <div className={
+                `${styles.dot8} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Carpals')
+                  }
+                }
+                >
+                  {
+                  tasks.Carpals
+                } </div> <div className={
+                `${styles.dot9} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'PhalangesHand')
+                  }
+                }
+                >
+                  {
+                  tasks.PhalangesHand
+                } </div> <div className={
+                `${styles.dot10} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Femur')
+                  }
+                }
+                >
+                  {
+                  tasks.Femur
+                } </div> <div className={
+                `${styles.dot11} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Tibia')
+                  }
+                }
+                >
+                  {
+                  tasks.Tibia
+                } </div> <div className={
+                `${styles.dot12} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Fibula')
+                  }
+                }
+                >
+                  {
+                  tasks.Fibula
+                } </div> <div className={
+                `${styles.dot13} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Tarsals')
+                  }
+                }
+                >
+                  {
+                  tasks.Tarsals
+                } </div> <div className={
+                `${styles.dot14} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'PhalangesFoot')
+                  }
+                }
+                >
+                  {
+                  tasks.PhalangesFoot
+                } </div> <div className={
+                `${styles.dot15} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Cervical')
+                  }
+                }
+                >
+                  {
+                  tasks.Cervical
+                } </div> <div className={
+                `${styles.dot16} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'Scapula')
+                  }
+                }
+                >
+                  {
+                  tasks.Scapula
+                } </div> <div className={
+                `${styles.dot17} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'LumbarVertebrae')
+                  }
+                }
+                >
+                  {
+                  tasks.LumbarVertebrae
+                } </div> <div className={
+                `${styles.dot18} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'ThoracicVertebrae')
+                  }
+                }
+                >
+                  {
+                  tasks.ThoracicVertebrae
+                } </div> <div className={
+                `${styles.dot19} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'PelvicGirdle')
+                  }
+                }
+                >
+                  {
+                  tasks.PelvicGirdle
+                } </div> <div className={
+                `${styles.dot20} ${styles.dot}`
+                }
+                  onDragOver={
+                (e) => this.onDragOver(e)
+              }
+                  onDrop={
+                  (e) => {
+                    this.onDrop(e, 'SacrumCoccyx')
+                  }
+                }
+                >
+                  {
+                  tasks.SacrumCoccyx
+                } </div>
             </div>
 
           </div>
@@ -299,7 +520,7 @@ render () {
 
               <div className="column col-12">
                 <div className="fixd">
-                  <button disabled={tasks.dragSec.length > 0} type="button" className="btn btn-primary col-12" name="button"> SUBMIT </button>
+                  <Button loading={markLoader} onClick={this.handleSubmit} disabled={tasks.dragSec.length > 0} type="primary" style={{ width: '100%' }} name="button"> SUBMIT </Button>
                 </div>
               </div>
             </div>
@@ -317,6 +538,7 @@ render () {
           </Modal>}
         </div>
       </div>
+      {congratModalVisible && <CongratPage completeTags={completeTags} point={point} />}
     </div>
 
   )
