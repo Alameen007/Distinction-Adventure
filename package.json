@@ -15,7 +15,7 @@
     "dva": "^2.1.0",
     "dva-loading": "^1.0.4",
     "ejs-loader": "^0.3.0",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "fireworks-react": "^1.0.12",
     "highcharts-exporting": "^0.1.2",
     "highcharts-more": "^0.1.2",
